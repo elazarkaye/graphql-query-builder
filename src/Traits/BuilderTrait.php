@@ -82,7 +82,7 @@ trait BuilderTrait
     protected function processEnums()
     {
         foreach ($this->values as $value) {
-            if(strpos($value, 'ENUM_') !== false) {
+            if(strpos((string) $value, 'ENUM_') !== false) {
                 $this->arguments = str_replace(sprintf('"%s"', $value), $value, $this->arguments);
             }
         }
@@ -94,7 +94,7 @@ trait BuilderTrait
     protected function processOrderBy()
     {
         foreach ($this->values as $value) {
-            if(strpos($value, 'ORDER_') !== false) {
+            if(strpos((string) $value, 'ORDER_') !== false) {
                 $this->arguments = str_replace(sprintf('"%s"', $value), $value, $this->arguments);
             }
         }
